@@ -1,0 +1,32 @@
+body {
+  background-color: #0c1021;
+  color: white;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  size: 10px;
+}
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+a:active {
+  color: white;
+  text-decoration: none;
+}
+
+

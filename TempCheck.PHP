@@ -3,69 +3,46 @@
 <link rel="stylesheet" href="Originality.css">
 <title> TempCheck </title>
 </head>
-<body>
-<table width= "100%">
-<tr>
-	<td width= "50%" ><a href= "Index.html"> Homepage </a></td>
-	<td width= "50%"><a href = "TempCheck.PHP"> Tables </a> </td>
-</tr>
-</table>
-<h1>This table contains the values of the temperature measurements</h1>
+	<body>
+		<table width= "100%">
+			<tr>
+				<td width= "33%" ><a href= "index.html"> Homepage </a></td>
+				<td width= "33%"><a href = "TempCheck.PHP"> Tables </a></td>
+				<td width= "33%" ><a href= "DataHandling.php"> Datahandling </a></td>
+			</tr>
+		</table>
+		<h1>This table contains the values of the temperature measurements</h1>
 
 
 
-<table width = "50%">
-<?php
+		<table width = "50%">
+		<?php
 
-  $conn = mysqli_connect("localhost", "student_12002498", "NJIoSe1Vam7j", "student_12002498");
-  
-// Check connection
-  if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
+		  $conn = mysqli_connect("localhost", "student_12002498", "NJIoSe1Vam7j", "student_12002498");
+		  
+		// Check connection
+		  if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		  }
 
-  $values = 5;
-  $i = 0;
-  $aantal = 5;
-  while($i!=$aantal) 
-  { ?>
-    <tr height = "40px" >
-      <td width = "50%"> <?php echo $values;?></td>
-      <td width = "50%"><?php echo $values;?></td>
-    </tr>
-  <?php
-   $i++;
-   }
-   ?>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   <?php
-   mysqli_close($conn);
-   echo "connection closed";
-   }
-   ?>
-</table>
+		  $values = 5;
+		  $i = 0;
+		  $aantal = 5;
+		  while($i!=$aantal) 
+		  { ?>
+			<tr height = "40px" >
+			  <td width = "50%"> <?php echo $values;?></td>
+			  <td width = "50%"><?php echo $values;?></td>
+			</tr>
+		  <?php
+		   $i++;
+		   }
+		   ?>
+		</table>
+		   <?php
+		   mysqli_close($conn);
+		   echo "connection closed";
+		   ?>
 
-</body>
+	</body>
 </html>

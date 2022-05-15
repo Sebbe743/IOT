@@ -13,8 +13,6 @@
 		</table>
 		<h1>This table contains the values of the temperature measurements</h1>
 
-
-
 		<table width = "50%">
 		<?php
 

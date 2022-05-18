@@ -13,16 +13,12 @@
 		</table>
 		<h1>This table contains the values of the temperature measurements</h1>
 
+		<?php
+			
+			include'Connection.PHP';
+		?>
 		<table width = "50%">
 		<?php
-
-		  $conn = mysqli_connect("localhost", "student_12002498", "NJIoSe1Vam7j", "student_12002498");
-		  
-		// Check connection
-		  if (!$conn) {
-			die("Connection failed: " . mysqli_connect_error());
-		  }
-
 		  $values = 5;
 		  $i = 0;
 		  $aantal = 5;

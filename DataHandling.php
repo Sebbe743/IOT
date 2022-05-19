@@ -6,7 +6,7 @@
 	<body>
 		<table width= "100%">
 			<tr>
-			<td width= "33%" ><a href= "index.html"> Homepvalue </a></td>
+			<td width= "33%" ><a href= "index.html"> Home</a></td>
 			<td width= "33%"><a href = "TempCheck.PHP"> Tables </a></td>
 			<td width= "33%" ><a href= "DataHandling.php"> Datahandling </a></td>
 			</tr>
@@ -15,6 +15,21 @@
 			
 			$type = "";
 			$value = "";
+			
+			$ID =01;
+			$val =22.1;
+			include 'Connection.PHP';
+			$sql = "INSERT INTO `Values` (`ID-Sensor`, `Waarde`, `Timestamp`)
+			VALUES ($ID, $val, 'now()')";
+			if(mysqli_query($conn, $sql))
+			{
+				echo "data added";
+				sleep(2);
+			}
+			else
+			{
+				echo "error";
+			}
 			
 			if(isset($_GET['type']))
 			{
@@ -28,7 +43,7 @@
 			
 			if( $type!="" &&  $value != "") 
 			{
-			  echo "data sent, type". $type "<br />";
+			  echo "data sent, type". $type ."<br />";
 			  echo "value ". $value  . "<br />";
 			  exit();
 			}
@@ -36,6 +51,7 @@
 		   {
 			echo "Please enter an value and type";
 		   }
+		
 		?>
 	
 

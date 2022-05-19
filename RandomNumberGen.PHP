@@ -5,5 +5,5 @@
 	$Aftercomma = mt_rand(0, 10)/10;
 	$Reading = $Reading + $Aftercomma;
 	
-	echo $Reading;
+	//echo $Reading;
 ?>

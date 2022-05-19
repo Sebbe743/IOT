@@ -19,14 +19,15 @@
 		?>
 		<table width = "50%">
 		<?php
-		  $values = 5;
 		  $i = 0;
 		  $aantal = 5;
 		  while($i!=$aantal) 
-		  { ?>
+		  { 
+		  include 'RandomNumberGen.PHP';
+		  ?>
 			<tr height = "40px" >
-			  <td width = "50%"> <?php echo $values;?></td>
-			  <td width = "50%"><?php echo $values;?></td>
+			  <td width = "50%"> <?php echo $sensorID;?></td>
+			  <td width = "50%"><?php echo $Reading;?></td>
 			</tr>
 		  <?php
 		   $i++;

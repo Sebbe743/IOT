@@ -18,6 +18,10 @@
 			include'Connection.PHP';
 		?>
 		<table width = "50%">
+			<tr>
+			  <td width = "50%"> sensor id </td>
+			  <td width = "50%"> measurements </td>
+			</tr>
 		<?php
 		  $i = 0;
 		  $aantal = 5;
@@ -26,8 +30,8 @@
 		  include 'RandomNumberGen.PHP';
 		  ?>
 			<tr height = "40px" >
-			  <td width = "50%"> <?php echo $sensorID;?></td>
-			  <td width = "50%"><?php echo $Reading;?></td>
+			  <td width = "50%"> <?php echo sprintf("%02d",$SensorID);?></td>
+			  <td width = "50%"><?php echo sprintf("%.1f", $Reading);?></td>
 			</tr>
 		  <?php
 		   $i++;

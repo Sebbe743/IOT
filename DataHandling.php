@@ -6,9 +6,9 @@
 	<body>
 		<table width= "100%">
 			<tr>
-			<td width= "33%" ><a href= "index.html"> Home</a></td>
-			<td width= "33%"><a href = "TempCheck.PHP"> Tables </a></td>
-			<td width= "33%" ><a href= "DataHandling.php"> Datahandling </a></td>
+			<td width= "33%" ><a href= "index.html"> <h1>Homepage</h1> </a> </td>
+			<td width= "33%"><a href = "TempCheck.PHP"> <h1> Tables </h1> </a> </td>
+			<td width= "33%" ><a href= "DataHandling.php"> <h1> Datahandling </h1> </a> </td>
 			</tr>
 		</table>
 		<?php
@@ -19,8 +19,9 @@
 			$ID =01;
 			$val =22.1;
 			include 'Connection.PHP';
-			$sql = "INSERT INTO `Values` (`ID-Sensor`, `Waarde`, `Timestamp`)
-			VALUES ($ID, $val, 'now()')";
+			
+			$sql = "INSERT INTO `Values` (`ID-Sensor`, `Waarde`, `Tijdstip`)
+			VALUES ($ID, $val, date('Y-m-d H:i:s'))";
 			if(mysqli_query($conn, $sql))
 			{
 				echo "<br />data added";

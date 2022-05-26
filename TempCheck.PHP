@@ -6,26 +6,19 @@
 	<body>
 		<table width= "100%">
 			<tr>
-				<td width= "33%" ><a href= "index.html"> Homepage </a></td>
-				<td width= "33%"><a href = "TempCheck.PHP"> Tables </a></td>
-				<td width= "33%" ><a href= "DataHandling.php"> Datahandling </a></td>
+				<td width= "33%" ><a href= "index.html"> <h1> Homepage </h1> </a> </td>
+				<td width= "33%"><a href = "TempCheck.PHP"> <h1> Tables </h1> </a> </td>
+				<td width= "33%" ><a href= "DataHandling.php"> <h1> Datahandling </h1> </a> </td>
 			</tr>
 		</table>
-		<h1>This table contains the values of the temperature measurements</h1>
+		<h2>This table contains the values of the temperature measurements</h2>
 
 		<?php
 			
-		  //include'Connection.PHP';
-		  $conn = mysqli_connect("localhost", "student_12002498", "NJIoSe1Vam7j", "student_12002498");
-		  if (!$conn) 
-  		{
-			die("Connection failed: " . mysqli_connect_error());
-		}
-		
-		  $i = 0;
-		  $aantal = 5;
-		  $sql = "SELECT * FROM Values";
-		  $result = mysqli_query($conn,"SELECT * FROM `Values`");
+		  include'Connection.PHP';
+		  
+		  $sql = "SELECT * FROM `Values`";
+		  $result = mysqli_query($conn, $sql);
 		  
 		  
 		  if($result)
@@ -62,7 +55,7 @@
 		</table>
 		   <?php
 		   mysqli_close($conn);
-		   echo "<br />connection closed<br />";
+		   //echo "<br />connection closed<br />";
 		   ?>
 
 	</body>

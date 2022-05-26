@@ -23,7 +23,7 @@
 			VALUES ($ID, $val, 'now()')";
 			if(mysqli_query($conn, $sql))
 			{
-				echo "data added";
+				echo "<br />data added";
 				sleep(2);
 			}
 			else
@@ -49,7 +49,7 @@
 			}
 		   else
 		   {
-			echo "Please enter an value and type";
+			echo "<br />Please enter a value and type <br />";
 		   }
 		
 		?>

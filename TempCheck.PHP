@@ -24,7 +24,7 @@
 		  if($result)
 		  {
 				?>
-				<table width = "50%">
+				<table width = "80%", border >
 				<tr>
 				  <td width = "33%"> sensor id </td>
 				  <td width = "33%"> measurements </td>

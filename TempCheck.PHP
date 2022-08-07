@@ -33,22 +33,26 @@
 				<div id="scroll" style= "overflow-y:scroll; height:400px; width:80%;">
 				<table border="3px" width="100%">
 				<tr>
-				  <td width = "33%"> Sensor ID </td>
-				  <td width = "33%"> Measurements </td>
-				  <td width = "33%"> Time </td>
+				  <td width = "9%"> # </td>
+				  <td width = "30%"> Sensor ID </td>
+				  <td width = "30%"> Measurements </td>
+				  <td width = "30%"> Time </td>
 				</tr>
 				<?php
+				$i =0;
 				// keep rows coming				
 				while($row = mysqli_fetch_assoc($result))
 				{
 					//get data to pop up for table
 				?>
 					<tr height = "40px" >
-					  <td width = "33%"> <?php echo sprintf("%02d",$row["ID-Sensor"]);?></td>
-					  <td width = "33%"> <?php echo sprintf("%02.1f",$row["Waarde"]);?></td>
-					  <td width = "33%"> <?php echo sprintf("%s",$row["Tijdstip"]);?></td>
+					  <td width = "9%"> <?php echo sprintf("%02d",$i);?></td>
+					  <td width = "30%"> <?php echo sprintf("%02d",$row["ID-Sensor"]);?></td>
+					  <td width = "30%"> <?php echo sprintf("%02.1f",$row["Waarde"]);?></td>
+					  <td width = "30%"> <?php echo sprintf("%s",$row["Tijdstip"]);?></td>
 					</tr>
-				<?php	
+				<?php
+				$i++;
 				}
 		  }
 			//no results
@@ -63,7 +67,7 @@
 		<br><br>
 		
 		   <?php
-		   include 'Graph.php';
+		   include'Graph.php';
 		   
 		   mysqli_close($conn);
 		   //echo "<br />connection closed<br />";

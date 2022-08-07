@@ -10,11 +10,31 @@
 	const BarChart = new Chart(ctx, {
 		type: 'bar',
 		data: {
-			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			labels: [ <?php 
+				  //connect to sql
+				  include'Connection.PHP';
+				  
+				  //select all values by default
+				  $sql = "SELECT * FROM `Values`";
+				  //show all values
+				  $result = mysqli_query($conn, $sql);
+					if($result)
+					{
+						$i = 1;
+					while($row = mysqli_fetch_assoc($result))
+					{
+					//get data to pop up for graph
+					echo sprintf("%02d",$i);?> ,
+					<?php	
+					$i++;
+				}
+					}
+				
+				?>	],
 			datasets: [{
 				label: 'Temperature',
 				data: [	<?php 
-				//connect to sql
+				  //connect to sql
 				  include'Connection.PHP';
 				  
 				  //select all values by default
@@ -26,18 +46,17 @@
 					while($row = mysqli_fetch_assoc($result))
 					{
 					//get data to pop up for graph
-					
-					  sprintf("%02.1f",$row["Waarde"]);?>,
+					echo sprintf("%02.1f",$row["Waarde"]);?> ,
 					<?php	
 				}
 					}
 				
-				?> ],
+				?> ], 
 				backgroundColor: [
-					'rgba(255, 99, 132, 0.8)'
+					'rgba(97, 153, 59, 0.8)'
 				],
 				borderColor: [
-					'rgba(255, 99, 132, 1)'
+					'rgba(97, 153, 59, 1)'
 				],
 				borderWidth: 1
 			}]
@@ -62,10 +81,48 @@
 	const LineChart = new Chart(content, {
 		type: 'line',
 		data: {
-			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			labels: [<?php 
+				  //connect to sql
+				  include'Connection.PHP';
+				  
+				  //select all values by default
+				  $sql = "SELECT * FROM `Values`";
+				  //show all values
+				  $result = mysqli_query($conn, $sql);
+					if($result)
+					{
+						$i = 1;
+					while($row = mysqli_fetch_assoc($result))
+					{
+					//get data to pop up for graph
+					echo sprintf("%02d",$i);?> ,
+					<?php	
+					$i++;
+				}
+					}
+				
+				?>],
 			datasets: [{
 				label: 'Temperature',
-				data: [12, 19, 3, 5, 2, 3],
+				data: [<?php 
+				  //connect to sql
+				  include'Connection.PHP';
+				  
+				  //select all values by default
+				  $sql = "SELECT * FROM `Values`";
+				  //show all values
+				  $result = mysqli_query($conn, $sql);
+					if($result)
+					{
+					while($row = mysqli_fetch_assoc($result))
+					{
+					//get data to pop up for graph
+					echo sprintf("%02.1f",$row["Waarde"]);?> ,
+					<?php	
+				}
+					}
+				
+				?>],
 				fill: false,
 				
 				borderColor: [

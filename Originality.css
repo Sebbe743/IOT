@@ -1,6 +1,7 @@
 body {
   background-color: #0c1021;
   color: white;
+  min-height: 100%;
 }
 
 h1 {
@@ -32,7 +33,16 @@ a:active {
 html {
   height: 100%;
 }
-body {
-  min-height: 100%;
+
+.Chart {
+	width:80%;
+	height:400px;
+}
+
+.BarChart{
+	display: block; 
+	box-sizing: border-box; 
+	width:100%; 
+	height:400px;
 }
 

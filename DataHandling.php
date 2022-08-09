@@ -33,6 +33,16 @@
 		{
 			echo "error";
 		}			
+		$sql = "UPDATE `Sensors` SET `Last known timestamp` = date('Y-m-d H:i:s') WHERE `Sensor-ID`=1";
+		if(mysqli_query($conn, $sql))
+		{
+			echo "<br />done";
+			
+		}
+		else
+		{
+			echo "<br />error";
+		}			
 	}
 	if($val != "") 
 	{

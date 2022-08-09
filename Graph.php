@@ -24,7 +24,7 @@
 					while($row = mysqli_fetch_assoc($result))
 					{
 					//get data to pop up for graph
-					echo sprintf("%02d",$i);?> ,
+					echo sprintf("%d",$i);?> ,
 					<?php	
 					$i++;
 				}
@@ -95,7 +95,7 @@
 					while($row = mysqli_fetch_assoc($result))
 					{
 					//get data to pop up for graph
-					echo sprintf("%02d",$i);?> ,
+					echo sprintf("%d",$i);?> ,
 					<?php	
 					$i++;
 				}

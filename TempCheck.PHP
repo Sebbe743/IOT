@@ -1,9 +1,9 @@
 <html>
-<head>
-<link rel="stylesheet" href="Originality.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-<title> TempCheck </title>
-</head>
+	<head>
+		<link rel="stylesheet" href="Originality.css">
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+		<title> TempCheck </title>
+	</head>
 	<body>
 		<table width= "100%">
 			<tr>
@@ -30,38 +30,38 @@
 			  //make class with scrollable tables
 				?>
 				
-				<div id="scroll" style= "overflow-y:scroll; height:400px; width:80%;">
-				<table border="3px" width="100%">
-				<tr>
-				  <td width = "9%"> # </td>
-				  <td width = "30%"> Sensor ID </td>
-				  <td width = "30%"> Measurements </td>
-				  <td width = "30%"> Time </td>
-				</tr>
-				<?php
-				$i =0;
-				// keep rows coming				
-				while($row = mysqli_fetch_assoc($result))
+				<div id="scroll">
+					<table border="3px" width="100%">
+						<tr>
+						  <td width = "9%"> # </td>
+						  <td width = "30%"> Sensor ID </td>
+						  <td width = "30%"> Measurements </td>
+						  <td width = "30%"> Time </td>
+						</tr>
+					<?php
+					$i =0;
+					// keep rows coming				
+					while($row = mysqli_fetch_assoc($result))
+					{
+						//get data to pop up for table
+					?>
+						<tr height = "40px" >
+						  <td width = "9%"> <?php echo sprintf("%02d",$i);?></td>
+						  <td width = "30%"> <?php echo sprintf("%02d",$row["ID-Sensor"]);?></td>
+						  <td width = "30%"> <?php echo sprintf("%02.1f",$row["Waarde"]);?></td>
+						  <td width = "30%"> <?php echo sprintf("%s",$row["Tijdstip"]);?></td>
+						</tr>
+					<?php
+					$i++;
+					}
+			  }
+				//no results
+				else
 				{
-					//get data to pop up for table
-				?>
-					<tr height = "40px" >
-					  <td width = "9%"> <?php echo sprintf("%02d",$i);?></td>
-					  <td width = "30%"> <?php echo sprintf("%02d",$row["ID-Sensor"]);?></td>
-					  <td width = "30%"> <?php echo sprintf("%02.1f",$row["Waarde"]);?></td>
-					  <td width = "30%"> <?php echo sprintf("%s",$row["Tijdstip"]);?></td>
-					</tr>
-				<?php
-				$i++;
+					echo "zero values";
 				}
-		  }
-			//no results
-			else
-			{
-				echo "zero values";
-			}
-		  ?>
-		</table>
+			  ?>
+			</table>
 		</div>
 		
 		<br><br>

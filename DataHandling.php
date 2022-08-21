@@ -14,50 +14,66 @@
 		</table>
 <?php
 	include 'Connection.PHP';
-	include 'RandomNumberGen.PHP';
-	
-	$ID = $SensorID;
-	$val = 0;
-	//$val = $_POST['value'];
 	
 	if(isset($_POST['Sub']))
 	{
-		$val = $_POST['value'];
-		$sql = "INSERT INTO `Values` (`ID-Sensor`, `Waarde`, `Tijdstip`)
-		VALUES ($ID, $val, date('Y-m-d H:i:s'))";
-		if(mysqli_query($conn, $sql))
+		if($_POST['value']!= "" && $_POST['value0'] != "")
 		{
-			echo "<br />data added";
-		}
-		else
-		{
-			echo "error";
-		}			
-		$sql = "UPDATE `Sensors` SET `Last known timestamp` = date('Y-m-d H:i:s') WHERE `Sensor-ID`=1";
-		if(mysqli_query($conn, $sql))
-		{
-			echo "<br />done";
 			
+			$val = $_POST['value'];
+			$ID = 1;
+			$sql = "INSERT INTO `Values` (`ID-Sensor`, `Waarde`, `Tijdstip`)
+			VALUES ($ID, $val, date('Y-m-d H:i:s'))";
+			if(mysqli_query($conn, $sql))
+			{
+				echo "<br />data added";
+			}
+			else
+			{
+				echo "error inserting temp";
+			}
+			
+			$val = $_POST['value1'];
+			$ID = 2;
+			$sql = "INSERT INTO `Values` (`ID-Sensor`, `Waarde`, `Tijdstip`)
+			VALUES ($ID, $val, date('Y-m-d H:i:s'))";
+			if(mysqli_query($conn, $sql))
+			{
+				echo "<br />data added";
+			}
+			else
+			{
+				echo "error inserting temp";
+			}
+			
+			$sql = "UPDATE `Sensors` SET `Last known timestamp` = date('Y-m-d H:i:s') WHERE `Sensor-ID`=1";
+			if(mysqli_query($conn, $sql))
+			{
+				echo "<br />done";
+				
+			}
+			else
+			{
+				echo "<br />error";
+			}
 		}
 		else
 		{
-			echo "<br />error";
-		}			
+			echo "<br />Please enter both values<br />";
+		}
 	}
-	if($val != "") 
+	if(isset($_POST['RNG']))
 	{
-	  echo "<br /> value is ". $val  . "<br />";
-	}
-	else
-	{
-		echo "<br />Please enter a value<br />";
+		include 'RandomNumberGen.PHP';
 	}
 ?>
 	
 
 		<form action = "#" method = "post">
-			value: <input type = "text" name = "value" />
+			value temp: <input type = "text" name = "value" />
+			value light: <input type = "text" name = "value1" />
 			<input type = "submit" name="Sub" />
+			<input type = "submit" name="RNG" Value = "Current Values" />
 		</form>
 	</body>
 </html>
